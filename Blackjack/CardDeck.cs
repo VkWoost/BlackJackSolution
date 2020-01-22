@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blackjack
 {
-   public class CardDeck
+    public class CardDeck
     {
         private Stack<PlayingCard> _cards = new Stack<PlayingCard>(BlackJackNumbers.CardsCount);
 
         public void Initialization()
         {
-            for(int value = 0; value < BlackJackNumbers.TheSameSuitCard; value++)
+            for (int value = 0; value < BlackJackNumbers.TheSameSuitCard; value++)
             {
                 int suit = (int)Suits.Diamonds;
                 _cards.Push(new PlayingCard(suit++, value));
@@ -25,7 +23,7 @@ namespace Blackjack
         public void Mix()
         {
             var random = new Random(DateTime.Now.Millisecond);
-            List <PlayingCard> list = _cards.ToList();
+            List<PlayingCard> list = _cards.ToList();
             for (int i = list.Count - 1; i > 0; i--)
             {
                 int j = random.Next(0, i + 1);
@@ -35,7 +33,7 @@ namespace Blackjack
             }
             _cards = new Stack<PlayingCard>(list);
         }
-        
+
         public PlayingCard IssueCard()
         {
             return _cards.Pop();

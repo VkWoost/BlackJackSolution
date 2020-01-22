@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Blackjack
+﻿namespace Blackjack
 {
-   public class Game
+    public class Game
     {
         public void StartProgram()
         {
@@ -33,6 +27,5 @@ namespace Blackjack
                 status = GameLogic.CheckEnteredAnswer();
             };
         }
-       
     }
 }
